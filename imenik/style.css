@@ -22,3 +22,6 @@ span{
 h2, #section2 {
     margin: 20px;
 }
+ul {
+    list-style: none;
+}

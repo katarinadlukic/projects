@@ -1,5 +1,6 @@
 let names = document.getElementById("section2");
 let contacts = [];
+
 function Contact(name, lastName, address, mobileNum, homeNum){ // konstruktor
     this.name  = name;
     this.lastName = lastName;
@@ -23,11 +24,11 @@ function createContact(){ // kreiranje kontakta i upisivanje u array
 function addContact(contacts){ //ispis podataka
         let x  = contacts[contacts.length-1];
         names.innerHTML += `
-        <p><span>Ime i prezime:</span> ${x.name} ${x.lastName}</p>
-        <p><span>Adresa:</span> ${x.address}</p>
-        <p><span>Mobilni:</span> ${x.mobileNum}</p>
-        <p><span>Fiksni:</span> ${x.homeNum}</p>
-        <hr>
+        <li><span>Ime i prezime:</span> ${x.name} ${x.lastName}</ul>
+        <li><span>Adresa:</span> ${x.address}</ul>
+        <li><span>Mobilni:</span> ${x.mobileNum}</ul>
+        <li><span>Fiksni:</span> ${x.homeNum}</ul>
+        <br><br>
         `
         
 }
