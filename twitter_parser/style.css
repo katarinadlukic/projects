@@ -7,9 +7,12 @@ p {
     margin: 10px;
     font-size: 20px;
 }
-span {
+#logo {
     font-weight: bold;
     color: #1DA1F2;
+}
+#hashTag{
+    font-weight: bold;
 }
 a{
    text-decoration:none;
