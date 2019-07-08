@@ -1,0 +1,17 @@
+input {
+    margin: 10px;
+    width: 70%;
+}
+.container {
+    border: 1px solid black;
+    width: 450px;
+    height: 450px;
+}
+#btn, input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 15px;
+}
+h2 {
+    margin: 20px;
+}
