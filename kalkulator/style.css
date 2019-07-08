@@ -1,3 +1,6 @@
+body{
+    font-size:30px; 
+}
 input {
     width: 100%;
     height: 100%;
@@ -8,10 +11,11 @@ input {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
+    color: rgb(24, 22, 22);
 }
 table {
     margin: 20px;
-    width: 350px;
+    width: 300px;
     height:400px;
 }
 .head{
@@ -21,6 +25,7 @@ button {
     width: 100%;
     height: 100%;
     text-align: center;
+    padding: none;
 }
 #ce {
     background-color: rgb(30, 206, 30);

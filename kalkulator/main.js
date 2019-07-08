@@ -6,6 +6,9 @@ let resField = document.getElementById("result");
 function typeNum(num){
     inputField.value += num;
 }
+function operand(char){
+    inputField.value +=char;
+}
 // izracunavanje i ispis rezultata u element "result"
 function calculate(){
      resField.value =`= ${eval(input.value)}`;
@@ -17,9 +20,15 @@ function clearAll(){
 }
 // izracunavanje korena 
 function sqr(){
+    if (inputField.value == ""){
+        resField = "";
+    }
     resField.value = Math.sqrt(eval(input.value));
 }
 // kvadrat i kub izracunavanje
 function pow(val){
+    if (inputField.value == ""){
+        resField = "";
+    }
     resField.value =  Math.pow(eval(input.value), val);
  }
