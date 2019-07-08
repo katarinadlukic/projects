@@ -1,5 +1,6 @@
 let inputField = document.getElementById("inputField");
 let res = document.getElementById("res");
+
 function linkIt(){
     let str = inputField.value;
     let arr = [];
