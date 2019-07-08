@@ -1,11 +1,11 @@
-
 let inputField = document.getElementById("input");
 let resField = document.getElementById("result");
 
-// dodavanje kliknutih karatera u input field
+// dodavanje kliknutih brojeva u input field
 function typeNum(num){
     inputField.value += num;
 }
+// dodavanje karaktera
 function operand(char){
     inputField.value +=char;
 }
