@@ -11,6 +11,9 @@ function linkIt(){
             let x = arr[i].replace(/@/g, "");
             arr[i] = `<a href="https://twitter.com/?lang=en">${x}</a>`
         }
+        else if (arr[i].includes("#")){
+            arr[i] = `<a href="https://twitter.com/?lang=en">${arr[i]}</a>`
+        }
     }
     let parsed = arr.join(" ");
     res.innerHTML = parsed;
