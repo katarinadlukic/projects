@@ -21,14 +21,27 @@ function createContact(){ // kreiranje kontakta i upisivanje u array
     addContact(contacts);
 }
 
+ function compare(a,b){ // funkcija koja sortira niz 
+        if (a.name > b.name){
+            return 1;
+        }
+        if(a.name < b.name){
+            return -1;
+        }
+        return 0;
+ }
 function addContact(contacts){ //ispis podataka
-        let x  = contacts[contacts.length-1];
-        names.innerHTML += `
-        <li><span>Ime i prezime:</span> ${x.name} ${x.lastName}</ul>
-        <li><span>Adresa:</span> ${x.address}</ul>
-        <li><span>Mobilni:</span> ${x.mobileNum}</ul>
-        <li><span>Fiksni:</span> ${x.homeNum}</ul>
+        names.innerHTML = "";
+        let x  = contacts.sort(compare); // sortiranje niza po abecednom redu na osnovu imena korisnika
+        for (let i = 0; i < x.length;i++){
+            names.innerHTML += `
+        <li><span>Ime i prezime:</span> ${x[i].name} ${x[i].lastName}</ul>
+        <li><span>Adresa:</span> ${x[i].address}</ul>
+        <li><span>Mobilni:</span> ${x[i].mobileNum}</ul>
+        <li><span>Fiksni:</span> ${x[i].homeNum}</ul>
         <br><br>
         `
+        }
+        
         
 }
