@@ -20,5 +20,6 @@ function linkIt(){
         }
     }
     let parsed = arr.join(" ");
-    res.innerHTML = parsed;
+    res.innerHTML +=`${parsed}<br>`;
+    inputField.value = ""; // brisanje input polja
 }
