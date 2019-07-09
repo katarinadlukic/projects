@@ -17,3 +17,6 @@ input {
 button{
     margin: 10px;   
 }
+::-webkit-input-placeholder {
+    font-style: italic;
+ }
