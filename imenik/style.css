@@ -1,27 +1,4 @@
-input {
-    margin: 10px;
-    width: 70%;
-}
-#section1 {
-    width: 45%;
-    padding: 10px;
-    display: inline-block;
-}
 
-span{
-    font-weight: bold;
-}
-#btn, input {
- 
-}
-#btn {
-    width: 70px;
-    font-weight: bold;
-    margin: 10px;
-}
-h2, #section2 {
-    margin: 20px;
-}
 ul {
     list-style: none;
 }

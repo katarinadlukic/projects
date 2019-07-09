@@ -9,16 +9,18 @@
 </head>
 <body>
     <div id="container">
+            <h2>Podaci o kontaktu:</h2>
     <div id="section1">
-        <h2>Podaci o kontaktu:</h2>
         <input type="text" id="name">Ime <br>
         <input type="text" id="lastName">Prezime<br>
         <input type="text" id="address">Adresa<br>
         <input type="text" id="mobileNum">Mobilni broj<br>
         <input type="text" id="homeNum">Kućni broj<br>
-        <button id="btn" onclick="createContact()">Dodaj</button>
     </div>
-    <h2>Imenik: </h2>
+    <br>
+    <button id="btn" onclick="createContact()">Dodaj</button>
+    <h2>Imenik: </h2> 
+    <input type="text" id="filterInput" placeholder="Pretraga" onkeyup="filterSearch()"  title="Ukucaj ime">
     <ul id="section2">
         
     </ul>
