@@ -1,4 +1,19 @@
 
-ul {
-    list-style: none;
+#section1, #section2{
+    width: 500px;
+    margin-left: 20px;
+}
+#section2 {
+    height: 250px;
+}
+#filterInput {
+    display: block
+}
+input {
+    width: 300px;
+    margin: 3px;
+    border-style: groove
+}
+button{
+    margin: 10px;   
 }

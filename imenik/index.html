@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,33 @@
     <link rel="stylesheet" href="style.css">
     <title>Imenik</title>
 </head>
+
 <body>
     <div id="container">
+        <div id="section1">
+            <h1>Imenik</h1>
+            <hr>
             <h2>Podaci o kontaktu:</h2>
-    <div id="section1">
-        <input type="text" id="name">Ime <br>
-        <input type="text" id="lastName">Prezime<br>
-        <input type="text" id="address">Adresa<br>
-        <input type="text" id="mobileNum">Mobilni broj<br>
-        <input type="text" id="homeNum">Kućni broj<br>
+
+            <form id="inputForm">
+                <input type="text" id="name"> Ime <br>
+                <input type="text" id="lastName"> Prezime<br>
+                <input type="text" id="address"> Adresa<br>
+                <input type="text" id="mobileNum"> Mobilni broj<br>
+                <input type="text" id="homeNum"> Kućni broj<br>
+            </form>
+            <button id="btn" onclick="createContact()">Dodaj</button>
+        </div>
+        <br>
+        <div id="section2">
+            <h2>Lista kontakta: </h2>
+            <input type="text" id="filterInput" placeholder="Pretraga" onkeyup="filterSearch()" title="Ukucaj ime">
+            <ul id="ulList"></ul>
+
+        </div>
+
     </div>
-    <br>
-    <button id="btn" onclick="createContact()">Dodaj</button>
-    <h2>Imenik: </h2> 
-    <input type="text" id="filterInput" placeholder="Pretraga" onkeyup="filterSearch()"  title="Ukucaj ime">
-    <ul id="section2">
-        
-    </ul>
-</div>
     <script src="main.js"></script>
 </body>
+
 </html>
