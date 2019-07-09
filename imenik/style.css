@@ -20,3 +20,6 @@ button{
 ::-webkit-input-placeholder {
     font-style: italic;
  }
+ ul {
+     text-decoration: none;
+ }

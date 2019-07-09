@@ -16,8 +16,8 @@ function createContact() { // kreiranje kontakta i upisivanje u array
     let addressVal = document.getElementById("address").value;
     let mobile = document.getElementById("mobileNum").value;
     let home = document.getElementById("homeNum").value;
-    let reMob = /^0(6[0123456])\d{6,}$/g;
-    let reHome = /^0\d{8,}$/g;
+    let reMob = /^0(6[0123456])\d{6,7}$/g;
+    let reHome = /^0\d{8,10}$/g;
     if ((reMob.test(mobile) && nameVal !== "") || (reHome.test(home) && nameVal !== "") ) { // uslovi za kreiranje kontakta
         let contact = new Contact(nameVal, lastNameVal, addressVal, mobile, home);
         contacts.push(contact);
