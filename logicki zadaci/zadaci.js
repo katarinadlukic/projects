@@ -41,7 +41,7 @@ function time_until_match(h, m, s){
         let seconds = sec % 60;
     return "Do prvog poklapanja kazaljki ostalo je jos "+ hours + " sat," + minutes + " minuta i "+ seconds + " sekundi.";
     }
-    let first_next_matching = Math.floor(currentTime/ firstMatching) + 1;
+    let first_next_matching = Math.ceil(currentTime/ firstMatching);
     let result = sec_to_time(firstMatching * first_next_matching - currentTime);
     return result;
 }
