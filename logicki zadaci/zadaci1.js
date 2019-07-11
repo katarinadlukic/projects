@@ -83,3 +83,47 @@ function primeNum(num){
     let result = "previous day is: " + previous + " next day is : " + next;
     return result;
  }
+
+//  21. Napisati funkciju koja ispisuje sve trocifrene brojeve koji imaju osobinu da su deljivi brojem koji se
+//  dobija izbacivanjem srednje cifre.
+//  Primer:
+//      broj: 121
+//      sa izbacenom srednjom cifrom: 11
+     
+//      121 je deljiv sa 11
+
+function noviBroj(i){
+    let jedinica = i%10;
+    let desetica = ((i - jedinica) /10) % 10;
+    let stotina = ((i -desetica*10 - jedinica) / 100) % 10;
+    return stotina*10 + jedinica;
+}
+
+function myFunction() {
+    let arr =[]
+    for(let i = 100; i < 1000; i++){
+       let delilac = noviBroj(i);
+        if( i% delilac === 0){
+            arr.push(i);
+        }
+    }return arr;
+
+}
+
+// 22.Prodavnica ima pakovanja deterdzenta u dzakovima od 16kg, 17kg i 21kg. Napisati funkciju koja ce odrediti
+// kako da se kupcu isporuci narucenih 185kg bez otvaranja (presipanja iz) dzakova.
+
+//28. Proveriti korektnost datuma zadatog sa tri prirodna broja, d,m i g.
+
+// 27. Odrediti broj dana za zadatu godinu.
+
+function brojDana(godina){
+    if(godina%400 === 0) {
+        return 366;
+   } else if ((godina%100 !==0) &&(godina%4 === 0)){
+        return 366;
+   }
+     else{
+       return 365
+   }
+}
