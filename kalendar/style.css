@@ -1,4 +1,3 @@
-
 th,
 td,
 tr {
@@ -7,7 +6,6 @@ tr {
     height: 35px;
     text-align: center;
 }
-
 h1,
 button,
 h2 {
@@ -15,24 +13,20 @@ h2 {
     width: 50px;
     display: inline;
 }
-
 thead td {
     background-color: rgb(223, 87, 33);
     font-weight: bold;
 }
-
 table {
     width: 380px;
 }
-
-
 button {
     font-weight: bold;
     width: 80px;
     background-color: rgb(212, 207, 205);
 }
-
-#time, #year {
+#time, 
+#year {
   
     font-weight: bold;
     display: inline-block;

@@ -5,11 +5,13 @@ let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let yearElement = document.getElementById("year");
 let monthElement = document.getElementById("month");
-let currentMonth = new Date().getMonth();; // mesec
+let currentMonth = new Date().getMonth(); // mesec
 let currentYear = new Date().getFullYear(); // godina
 let currentDay = new Date().getDate(); // dan u mesecu
 let c = currentDay + currentMonth + currentYear;
-
+let mnth = currentMonth;
+let yr = currentYear;
+yearElement.textContent = `${currentDay}/${currentMonth + 1}/${currentYear}`;
 function dateFormat(){
     var a = document.getElementById('format');
     a.addEventListener('change', function() {
@@ -87,7 +89,6 @@ function createBody() { // kreiranje redova sa odredjenim brojem
 }
 
 function createData(thisMonth, thisYear) {
-    yearElement.textContent = `${currentDay}/${currentMonth + 1}/${currentYear}`;
     monthElement.textContent = `${months[thisMonth]} ${thisYear}`;
     var daysNum = new Date(thisYear, thisMonth + 1, 0).getDate(); // broj dana u mesecu
     let start = dayWeekNum[new Date(thisYear, thisMonth, 1).getDay()]; //0
@@ -95,7 +96,7 @@ function createData(thisMonth, thisYear) {
     for (let i = start; i < daysNum + start; i++) {
         document.getElementById(`td${i}`).textContent = `${counter}`;
         // bojenje trenutnog datuma u crveno
-        if (currentDay === counter && c === (counter + thisMonth + thisYear)) {
+        if (counter === currentDay && thisMonth == currentMonth && thisYear == currentYear) {
             document.getElementById(`td${i}`).style.backgroundColor = " #f03333";
         }
         counter++;
@@ -104,16 +105,24 @@ function createData(thisMonth, thisYear) {
 
 function next() { // dugme next
     body.innerHTML = '';
-    currentMonth = currentMonth + 1;
+    mnth = mnth + 1;
+    if (mnth > 11 ){
+        mnth = 0;
+        yr = yr + 1;
+    }
     createBody();
-    createData(currentMonth, currentYear);
+    createData(mnth, yr);
 }
 
 function previous() { // dugme previous
     body.innerHTML = '';
-    currentMonth = currentMonth - 1;
+    mnth= mnth - 1;
+    if (mnth < 0 ){
+        mnth = 11 ;
+        yr = yr - 1;
+    }
     createBody();
-    createData(currentMonth, currentYear);
+    createData(mnth, yr);
 }
 
 function time() { // clock
