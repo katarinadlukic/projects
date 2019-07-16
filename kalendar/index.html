@@ -10,19 +10,18 @@
 </head>
 
 <body>
-    <h1 id="year"></h1>
+    <div id="clock">
+    <p id="str">Live clock: </p>
     <p id="time"></p>
-    <p>Select format from the list:</p>
-
+    </div>
     <form action="/action_page.php">
         <select name="format">
             <option value="1">MM/DD/YY</option>
             <option value="2">DD/MM/YY</option>
             <option value="3">YY/MM/DD</option>
         </select>
-        <br><br>
-        <input type="submit">
     </form>
+    <p id="year"></p>
     <div id="container">
         <div id="top">
             <button id="previous">Previous</button>

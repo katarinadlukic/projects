@@ -73,8 +73,7 @@ function createBody() { // kreiranje redova sa odredjenim brojem
 }
 
 function createData(thisMonth, thisYear) {
-    yearElement.textContent = `${thisYear}`; //${currentDay}/${months[currentMonth]}
-    monthElement.textContent = `${months[thisMonth]}`;
+    monthElement.textContent = `${months[thisMonth]} ${thisYear}`;
     var daysNum = new Date(thisYear, thisMonth + 1, 0).getDate(); // broj dana u mesecu
     let start = dayWeekNum[new Date(thisYear, thisMonth, 1).getDay()]; //0
     let counter = 1;
@@ -104,7 +103,6 @@ function previous() { // dugme previous
 
 function time() { // clock
     let livetime = document.getElementById("time");
-    livetime.innerHTML = "";
     var d = new Date();
     var s = d.getSeconds();
     if (s < 10) {
@@ -118,7 +116,7 @@ function time() { // clock
     if (h < 10) {
         h = "0" + h;
     }
-    livetime.innerHTML = h + ":" + m + ":" + s;
+    livetime.innerHTML = `${h}:${m}:${s}`;
 }
 listeners();
 setInterval(time, 1000);
