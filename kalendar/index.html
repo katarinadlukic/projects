@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,36 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Calendar</title>
 </head>
+
 <body>
     <h1 id="year"></h1>
     <p id="time"></p>
     <p>Select format from the list:</p>
 
-<form action="/action_page.php">
-  <select name="format">
-    <option value="1">MM/DD/YY</option>
-    <option value="2">DD/MM/YY</option>
-    <option value="3">YY/MM/DD</option>
-  </select>
-  <br><br>
-  <input type="submit">
-</form>
+    <form action="/action_page.php">
+        <select name="format">
+            <option value="1">MM/DD/YY</option>
+            <option value="2">DD/MM/YY</option>
+            <option value="3">YY/MM/DD</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
     <div id="container">
-    <div id="top">
-        <button id="previous">Previous</button>
-        <h2 id="month"></h2>
-        <button id="next">Next</button>
+        <div id="top">
+            <button id="previous">Previous</button>
+            <h2 id="month"></h2>
+            <button id="next">Next</button>
+        </div>
+
+        <table id="calendar">
+            <thead id="daysOfTheWeek"></thead>
+            <tbody id="body"></tbody>
+
+        </table>
     </div>
-    
-            <table id="calendar">
-                    <thead id="daysOfTheWeek"></thead>
-            
-            </table>
-    </div>
-    
+
     <script src="main.js"></script>
 </body>
+
 </html>

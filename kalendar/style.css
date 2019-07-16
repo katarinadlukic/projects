@@ -1,41 +1,53 @@
-table, th, td , tr{
+table,
+th,
+td,
+tr {
     border: 1px solid black;
     border-collapse: collapse;
 
-    
-  }
-  th, td , tr{
-    
+
+}
+
+th,
+td,
+tr {
+
     width: 35px;
     height: 35px;
     text-align: center;
-  }
-  h1 , button,h2{
-    margin:20px;
+}
+
+h1,
+button,
+h2 {
+    margin: 20px;
     width: 50px;
-  }
+}
 
-  thead td {
-      background-color: rgb(223, 87, 33);
-     font-weight: bold;
-  }
-  table {
-      border: 2px solid black;
-      width: 380px;
-  }
+thead td {
+    background-color: rgb(223, 87, 33);
+    font-weight: bold;
+}
 
-  h2 , button {
+table {
+    border: 2px solid black;
+    width: 380px;
+}
+
+h2,
+button {
     display: inline;
-   
-  }
-  button{
-      font-weight: bold;
-      width: 80px;
-      background-color: rgb(212, 207, 205);
-  }
-  #time {
+
+}
+
+button {
+    font-weight: bold;
+    width: 80px;
+    background-color: rgb(212, 207, 205);
+}
+
+#time {
     margin-left: 22px;
     font-size: 25px;
     font-weight: bold
-  }
-  
+}
