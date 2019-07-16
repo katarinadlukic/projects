@@ -10,10 +10,11 @@ table, th, td , tr{
     height: 35px;
     text-align: center;
   }
-  h1, h2 , button{
+  h1 , button,h2{
     margin:20px;
- 
+    width: 50px;
   }
+
   thead td {
       background-color: rgb(223, 87, 33);
      font-weight: bold;
