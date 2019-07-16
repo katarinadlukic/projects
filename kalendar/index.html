@@ -9,8 +9,25 @@
 </head>
 <body>
     <h1 id="year"></h1>
-    <h2 id="month"></h2>
+    <p id="time"></p>
+    <p>Select format from the list:</p>
+
+<form action="/action_page.php">
+  <select name="format">
+    <option value="1">MM/DD/YY</option>
+    <option value="2">DD/MM/YY</option>
+    <option value="3">YY/MM/DD</option>
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
     <div id="container">
+    <div id="top">
+        <button id="previous">Previous</button>
+        <h2 id="month"></h2>
+        <button id="next">Next</button>
+    </div>
+    
             <table id="calendar">
                     <thead id="daysOfTheWeek"></thead>
             
