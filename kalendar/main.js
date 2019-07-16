@@ -1,18 +1,15 @@
-let calendar = document.getElementById("calendar");
-let weekDays = document.getElementById("daysOfTheWeek");
-let dayWeekNum = [7, 1, 2, 3, 4, 5, 6];
+
 let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-let yearElement = document.getElementById("year");
-let monthElement = document.getElementById("month");
 let currentMonth = new Date().getMonth(); // mesec
 let currentYear = new Date().getFullYear(); // godina
 let currentDay = new Date().getDate(); // dan u mesecu
-let c = currentDay + currentMonth + currentYear;
 let mnth = currentMonth;
 let yr = currentYear;
-yearElement.textContent = `${currentDay}/${currentMonth + 1}/${currentYear}`;
+
 function dateFormat(){
+    let yearElement = document.getElementById("year");
+    yearElement.textContent = `${currentDay}/${currentMonth + 1}/${currentYear}`;
     var a = document.getElementById('format');
     a.addEventListener('change', function() {
        if (this.value == 0){
@@ -34,6 +31,7 @@ function listeners() {
 }
 
 function createThead() {
+    let weekDays = document.getElementById("daysOfTheWeek");
     for (let i = 0; i < days.length; i++) {
         let td = document.createElement("td");
         td.setAttribute("id", days[i]);
@@ -87,10 +85,11 @@ function createBody() { // kreiranje redova sa odredjenim brojem
 
     }
 }
-
 function createData(thisMonth, thisYear) {
+    let monthElement = document.getElementById("month");
     monthElement.textContent = `${months[thisMonth]} ${thisYear}`;
     var daysNum = new Date(thisYear, thisMonth + 1, 0).getDate(); // broj dana u mesecu
+    let dayWeekNum = [7, 1, 2, 3, 4, 5, 6];
     let start = dayWeekNum[new Date(thisYear, thisMonth, 1).getDay()]; //0
     let counter = 1;
     for (let i = start; i < daysNum + start; i++) {
@@ -102,7 +101,6 @@ function createData(thisMonth, thisYear) {
         counter++;
     }
 }
-
 function next() { // dugme next
     body.innerHTML = '';
     mnth = mnth + 1;
@@ -113,7 +111,6 @@ function next() { // dugme next
     createBody();
     createData(mnth, yr);
 }
-
 function previous() { // dugme previous
     body.innerHTML = '';
     mnth= mnth - 1;
@@ -124,7 +121,6 @@ function previous() { // dugme previous
     createBody();
     createData(mnth, yr);
 }
-
 function time() { // clock
     let livetime = document.getElementById("time");
     var d = new Date();
