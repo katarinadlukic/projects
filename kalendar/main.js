@@ -10,6 +10,20 @@ let currentYear = new Date().getFullYear(); // godina
 let currentDay = new Date().getDate(); // dan u mesecu
 let c = currentDay + currentMonth + currentYear;
 
+function dateFormat(){
+    var a = document.getElementById('format');
+    a.addEventListener('change', function() {
+       if (this.value == 0){
+        yearElement.textContent = `${currentDay}/${currentMonth + 1}/${currentYear}`;
+    }
+        if (this.value == 1){
+            yearElement.textContent = `${currentMonth + 1}/${currentDay}/${currentYear}`;
+        }
+        if (this.value == 2){
+            yearElement.textContent =  `${currentYear}/${currentMonth + 1}/${currentDay}`;
+        }
+    })
+}
 function listeners() {
     let previousBtn = document.getElementById("previous");
     let nextBtn = document.getElementById("next");
@@ -73,6 +87,7 @@ function createBody() { // kreiranje redova sa odredjenim brojem
 }
 
 function createData(thisMonth, thisYear) {
+    yearElement.textContent = `${currentDay}/${currentMonth + 1}/${currentYear}`;
     monthElement.textContent = `${months[thisMonth]} ${thisYear}`;
     var daysNum = new Date(thisYear, thisMonth + 1, 0).getDate(); // broj dana u mesecu
     let start = dayWeekNum[new Date(thisYear, thisMonth, 1).getDay()]; //0
@@ -123,3 +138,4 @@ setInterval(time, 1000);
 createThead();
 createBody();
 createData(currentMonth, currentYear);
+dateFormat();
