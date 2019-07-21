@@ -10,7 +10,15 @@ table {
     border: 1px solid black;
     width: 65px;
     height: 65px;
+ 
+
 }
+tbody{
+    pointer-events: none;
+}
+    td:hover { 
+    cursor: pointer;
+      }
 
  img {
     width: 63px;

@@ -89,26 +89,12 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name, "", -1)
 }
-function lvlOptions() {
-    let lvlTxt = document.getElementById("lvlTxt");
-    lvlTxt.textContent = " You have 60 sec to finish the game";
-    let a = document.getElementById('level');
-    a.addEventListener('change', function() {
-        if (this.value == 0) {
-            lvlTxt.textContent = " You have 60 sec to finish the game";
-        }
-        if (this.value == 1) {
-            lvlTxt.textContent = " You have 30 sec to finish the game";
-        }
-        if (this.value == 2) {
-            lvlTxt.textContent = " You have 15 sec to finish the game";
-        }
-    })
-}
+
 function generateTable() {
     let picsId= [0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7];
     let arr = shuffle(picsId); // shuffled array
     let tblBody = document.createElement("tbody");
+    tblBody.setAttribute("id", "tblBody");
     let row1 = document.createElement("tr");
     for (let i = 0; i < 4; i++) {
     row1.innerHTML += `<td id='${i}' onclick = "check(this,${arr[i]})" ></td>`;
@@ -136,6 +122,7 @@ function check(element,value) {
     let imageToCompare = data[value].url;
     if(element.innerHTML == "" && imgId.length < 2){
         element.innerHTML = `<img id=${value} src='${imageToCompare}'/>`;
+ 
         if(imgId.length == 0){
             imgId.push(value);
             cellId.push(element.id);
@@ -146,6 +133,7 @@ function check(element,value) {
                 openElements += 2;
                 imgId = [];
                 cellId = [];
+                
             }else {
                 function removePictures(){
                     document.getElementById(cellId[1]).innerHTML = "";
@@ -181,3 +169,39 @@ function shuffle(array) {
     }
     return array;
 };
+let time = 0;
+function lvlOptions() {
+    let lvlTxt = document.getElementById("lvlTxt");
+    lvlTxt.textContent = " You have 60 sec to finish the game";
+    let a = document.getElementById('level');
+    a.addEventListener('change', function() {
+        if (this.value == 0) {
+            time = 0;
+            lvlTxt.textContent = " You have 60 sec to finish the game";
+        }
+        if (this.value == 1) {
+            time = 1;
+            lvlTxt.textContent = " You have 30 sec to finish the game";
+        }
+        if (this.value == 2) {
+            time = 2;
+            lvlTxt.textContent = " You have 15 sec to finish the game";
+        }
+    })
+}
+function gameStart(){
+    document.getElementById("tblBody").style.pointerEvents = "visible";
+    if(time == 0){
+        setTimeout(endGame,60000)
+    }
+    if(time == 1){
+        setTimeout(endGame,30000)
+    }
+    if(time == 2){
+        setTimeout(endGame,15000)
+    }
+}
+function endGame(){
+    document.getElementById("tblBody").style.pointerEvents = "none";
+    alert("Game over");
+}
