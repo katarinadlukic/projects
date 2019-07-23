@@ -1,28 +1,10 @@
-let data = [{
-	"id": "0",
-	"url": "images/cockta.png"
-}, {
-	"id": "1",
-	"url": "images/gorki_list.png"
-}, {
-	"id": "2",
-	"url": "images/guarana.png"
-}, {
-	"id": "3",
-	"url": "images/zero.png"
-}, {
-	"id": "4",
-	"url": "images/kozel.png"
-}, {
-	"id": "5",
-	"url": "images/krusovice.png"
-}, {
-	"id": "6",
-	"url": "images/pepsi.png"
-}, {
-	"id": "7",
-	"url": "images/schweppes.png"
-}]
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.myjson.com/bins/1gw9hx', true);
+xhr.onload = function() {
+    data = JSON.parse(xhr.responseText);
+}
+xhr.send();
+
 let btnStart = document.getElementById("start");
 let tbl = document.getElementById("table");
 let imgId = [];
@@ -37,7 +19,7 @@ let time = 0;
 function enterGame() {
 	let x = readCookie("username");
 	if (x) {
-		generateTable();
+		listeners();
 	} else {
 		let person = prompt("Please enter your name");
 		createCookie("username", person, 1);
@@ -106,13 +88,9 @@ function check(element, value) {
 		if (imgId.length == 0) {
 			imgId.push(value);
 			cellId.push(element.id);
-			console.log(imgId);
-			console.log(cellId);
 		} else if (imgId.length == 1) {
 			imgId.push(value);
 			cellId.push(element.id);
-			console.log(imgId);
-			console.log(cellId);
 			if (imgId[0] == imgId[1]) {
 				openElements += 2;
 				imgId = [];
@@ -124,10 +102,7 @@ function check(element, value) {
 				}
 			} else {
 				function removePictures() {
-					// debugger;
-					console.log(document.getElementById(cellId[0]));
 					document.getElementById(cellId[0]).innerHTML = "";
-					console.log(document.getElementById(cellId[1]));
 					document.getElementById(cellId[1]).innerHTML = "";
 					imgId = [];
 					cellId = [];
@@ -188,11 +163,15 @@ function gameStart() {
 	}
 	timeStart = new Date();
 }
-
+let scoreArr = [];
 function displayScore() {
-	let scoreCal = timeEnd - timeStart;
-	score = millisToMinutesAndSeconds(scoreCal);
-	document.getElementById("list").innerHTML = `<li>${player}: ${score} sec</li>`
+	let score = millisToMinutesAndSeconds(timeEnd - timeStart);
+	scoreArr.push(score);
+	scoreArr.sort(function(a,b){return a-b});
+	document.getElementById("list").innerHTML = '';
+	for (let i = 0; i < scoreArr.length; i++){
+		document.getElementById("list").innerHTML += `<li>${player}: ${scoreArr[i]} sec</li>`;
+	}
 }
 
 function millisToMinutesAndSeconds(millis) {
@@ -219,7 +198,7 @@ function countdown(t) {
 	}, 1000);
 }
 (function init() {
-	listeners();
+	
 	lvlOptions();
 	generateTable();
 	setTimeout(enterGame, 300);
