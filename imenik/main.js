@@ -20,7 +20,7 @@ function Contact(name, lastName, address, mobileNum, homeNum) { // konstruktor
 }
 
 function createContact() {
-	displayContacts(storage) // kreiranje kontakta i upisivanje u array
+	// kreiranje kontakta i upisivanje u array
 	let nameVal = document.getElementById("name").value;
 	let lastNameVal = document.getElementById("lastName").value;
 	let addressVal = document.getElementById("address").value;
@@ -60,17 +60,22 @@ function addContact(contacts) { //ispis podataka
 		removeValues(); // brisanje vrednosti iz input polja
 		names.innerHTML = ""; // brisanje starog ispisa liste
 		storage.sort(compare); // sortiranje niza po abecednom redu na osnovu imena korisnika
+		console.log(contacts)
 		displayContacts(storage);
-		console.log("this")
+
 	} else {
 		removeValues(); // brisanje vrednosti iz input polja
+		console.log(contacts)
 		localStorage.setItem("contacts", JSON.stringify(contacts));
 		contacts.sort(compare); // sortiranje niza po abecednom redu na osnovu imena korisnika
+		names.innerHTML = "";
 		displayContacts(contacts);
 	}
 }
 function deleteContacts(){
 	names.innerHTML = "";
+	contacts = [];
+	currentStorage = [];
 	localStorage.removeItem("contacts");
 }
 function filterSearch() { // funkcija koja pretrazuje karaktere u listi, filter
