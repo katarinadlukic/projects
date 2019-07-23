@@ -16,15 +16,20 @@ let timeEnd = 0;
 let timeStart = 0;
 let time = 0;
 
-function enterGame() { 
+function enterGame() { // kreiranje cookie-ja
 	let x = readCookie("username");
 	if (x) {
-		listeners();
+		player = x;
 	} else {
 		let person = prompt("Please enter your name");
-		createCookie("username", person, 1);
+		if(person == null || person === ""){
+			player = "Guest";
+		}else {
+			createCookie("username", person, 1);
+			player = person;
+		}		
 	}
-	player = x;
+	listeners();
 }
 
 function listeners() {
