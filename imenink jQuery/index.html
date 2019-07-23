@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+        <div id="container">
+                <div id="section1">
+                    <h1>Imenik</h1>
+                    <hr>
+                    <h2>Novi kontakt:</h2>
+        
+                    <form id="inputForm">
+                        <input type="text" id="name" placeholder="Marko"> Ime <br>
+                        <input type="text" id="lastName" placeholder="Markovic"> Prezime<br>
+                        <input type="text" id="address" placeholder="Adresa"> Adresa<br>
+                        <input type="text" id="mobileNum" placeholder="06xxx"> Mobilni broj<br>
+                        <input type="text" id="homeNum" placeholder="011xxx"> Kućni broj<br>
+                    </form>
+                    <button id="btn">Dodaj</button>
+                    <button id="btnDel">Obrisi kontakte</button>
+                </div>
+                <br>
+                <div id="section2">
+                    <h2>Lista kontakta: </h2>
+                    <input type="text" id="filterInput" placeholder="Pretraga" title="Ukucaj ime">
+                    <ul id="ulList"></ul>
+        
+                </div>
+        
+            </div>
+    <script src="main.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+</body>
+</html>
