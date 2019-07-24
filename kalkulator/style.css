@@ -9,11 +9,13 @@ input {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
     color: rgb(24, 22, 22);
+    border: 1px solid gray;
 }
 table {
     margin: 20px;
     width: 300px;
     height:400px;
+    border: 1px solid gray;
 }
 .head{
     border: none;
