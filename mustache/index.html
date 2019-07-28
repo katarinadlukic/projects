@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+    <style>
+        .card{
+      width: 250px;
+      margin: 20px;
+      float: left;
+      }
+        .mail{
+      word-wrap: break-word;
+      font-size: 13px;
+      }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -19,34 +29,32 @@
             $.each(data.results,function(index,item){
                 let html = 
                         `<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="{{picture.large}}" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="{{picture.thumbnail}}" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">{{name.first}}</p>
-        <p class="title is-4">{{name.last}}</p>
-        <p class="subtitle is-6">@{{name.first}}{{name.last}}</p>
-      </div>
-    </div>
-
-    <div class="content">
-      <p>{{location.city}}</p>
-      <p>{{location.state}}</p>
-      <p>{{dob.age}}</p>
-      <p>{{dob.gender}}</p>
-      <p class="mail">{{email}}</p>
-    </div>
-  </div>
-</div>`
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img src="{{picture.large}}" alt="Placeholder image">
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-left">
+                                <figure class="image is-48x48">
+                                  <img src="{{picture.thumbnail}}" alt="Placeholder image">
+                                </figure>
+                              </div>
+                              <div class="media-content">
+                                <p class="title is-4">{{name.first}}<br>{{name.last}}</p>
+                                <p class="subtitle is-6">@{{name.first}}{{name.last}}</p>
+                              </div>
+                            </div>
+                            <div class="content">
+                              <p>{{location.city}}</p>
+                              <p>{{location.state}}</p>
+                              <p>{{dob.age}}</p>
+                              <p>{{dob.gender}}</p>
+                              <p class="mail">{{email}}</p>
+                            </div>
+                          </div>
+                        </div>`
                     $('body').append(Mustache.render(html,item));
             })
         }
