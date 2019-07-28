@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script>
+         $.ajax({
+        url: 'https://randomuser.me/api/?results=20',
+        dataType: 'json',
+        success: function(data) {
+            $.each(data.results,function(index,item){
+                let html = 
+                        `<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="{{picture.large}}" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{picture.thumbnail}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{name.first}}</p>
+        <p class="title is-4">{{name.last}}</p>
+        <p class="subtitle is-6">@{{name.first}}{{name.last}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>{{location.city}}</p>
+      <p>{{location.state}}</p>
+      <p>{{dob.age}}</p>
+      <p>{{dob.gender}}</p>
+      <p class="mail">{{email}}</p>
+    </div>
+  </div>
+</div>`
+                    $('body').append(Mustache.render(html,item));
+            })
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>
