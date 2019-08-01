@@ -8,29 +8,33 @@
     <title>Slider</title>
 </head>
 <body>
-    <div id="image_container">
-        <div id="left_arrow"><img id="left_img" src="slider_arrow_png_1254460 - left.png" width="50px" height="60px"/></div>
-        <div class="image_box">
-            <div id="main_image"></div>
-                <p id="title"></p>
-                <p id="description"></p>
+    <div id="plugin_container">
+        <div id="image_container">
+            <div id="left_arrow"><img id="left_img" src="slike/slider_arrow_png_1254460 - left.png" width="50px" height="60px"/></div>
+            <div id="image_box">
+                <div id="main_image"></div>
+                    <p id="title"></p>
+                    <p id="description"></p>
+            </div>
+            <div id="right_arrow"><img id="right_img" src="slike/slider_arrow_png_1254460 - right.png" width="50px" height="60px"/></div>
         </div>
-        <div id="right_arrow"><img id="right_img" src="slider_arrow_png_1254460 - right.png" width="50px" height="60px"/></div>
-    </div>
-    <div id="thumb_container">
-        <div id="thumb_table">
-            <div id="0"></div>
-            <div id="1"></div>
-            <div id="2"></div>
-            <div id="3"></div>
-            <div id="4"></div>
-            <div id="5"></div>
-            <div id="6"></div>
-            <div id="7"></div>
-            <div id="8"></div>
-        </div>
+        <div id="thumb_container">
+            <div id="thumb_table">
+                <div id="0"></div>
+                <div id="1"></div>
+                <div id="2"></div>
+                <div id="3"></div>
+                <div id="4"></div>
+                <div id="5"></div>
+                <div id="6"></div>
+                <div id="7"></div>
+                <div id="8"></div>
+            </div>
+        </div> 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js">
+        $("#plugin_container").mojSlider();
+    </script>
 </body>
 </html>
