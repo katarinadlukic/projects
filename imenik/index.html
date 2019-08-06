@@ -30,7 +30,19 @@
         <div id="section2">
             <h2>Lista kontakta: </h2>
             <input type="text" id="filterInput" placeholder="Pretraga" onkeyup="filterSearch()" title="Ukucaj ime">
-            <ul id="ulList"></ul>
+            <table>
+                <thead>
+                    <tr>
+                        <td id="span"><span></span></td>
+                        <td>Ime</td>
+                        <td>Prezime</td>
+                        <td>Adresa</td>
+                        <td>Mobilni</td>
+                        <td>Fiksni</td>
+                    </tr>
+                </thead>
+                <tbody  id="ulList"></tbody>
+            </table>
 
         </div>
 
