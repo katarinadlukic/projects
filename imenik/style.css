@@ -9,17 +9,46 @@
 #filterInput {
     display: block
 }
-input {
+form > input {
     width: 300px;
     margin: 3px;
-    border-style: groove
+    border-style: ridge;
+    padding: 3px;
 }
+ td > input{ 
+
+width: 100%;
+border-style: none;
+}
+
 button{
     margin: 10px;   
 }
 ::-webkit-input-placeholder {
     font-style: italic;
  }
- ul {
-     text-decoration: none;
- }
+table {
+    width: 1200px;
+    margin-top: 10px;
+    border: 1px solid gray;
+}
+td {
+    border: 1px solid gray;
+    padding: 2px;
+    width: 210px;
+}
+
+.del {
+    width: 10px;
+}
+thead{
+    background-color:rgb(74, 146, 77);
+}
+#span {
+    cursor: pointer;
+    padding: 5px;
+    width: 20px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
